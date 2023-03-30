@@ -2,7 +2,7 @@ package com.kreitek.files;
 
 import java.util.List;
 
-public  class FileReadWrite extends FileSystemItemBase implements FileSystemItem {
+public  class FileReadWrite extends FileSystemItemBase implements FilesOperations {
 
     private int size = 0;
     private boolean isOpen = false;
@@ -24,16 +24,6 @@ public  class FileReadWrite extends FileSystemItemBase implements FileSystemItem
 
     @Override
     public List<FileSystemItem> listFiles() {
-        throw new UnsupportedOperationException("No es válido para ficheros");
-    }
-
-    @Override
-    public void addFile(FileSystemItem file) {
-        throw new UnsupportedOperationException("No es válido para ficheros");
-    }
-
-    @Override
-    public void removeFile(FileSystemItem file) {
         throw new UnsupportedOperationException("No es válido para ficheros");
     }
 
@@ -80,6 +70,17 @@ public  class FileReadWrite extends FileSystemItemBase implements FileSystemItem
     @Override
     public void close() {
         isOpen = false;
+    }
+
+    // TODO -> arreglar excepciones
+    @Override
+    public void addFile(FileSystemItem file) {
+        throw new UnsupportedOperationException("No es válido para ficheros");
+    }
+
+    @Override
+    public void removeFile(FileSystemItem file) {
+        throw new UnsupportedOperationException("No es válido para ficheros");
     }
 
 }

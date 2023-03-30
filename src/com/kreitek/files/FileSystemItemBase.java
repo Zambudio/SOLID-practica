@@ -54,13 +54,15 @@ public abstract class FileSystemItemBase implements FileSystemItem {
     }
 
     @Override
-    public abstract String getExtension();
+    public abstract int getSize();
 
     @Override
     public abstract List<FileSystemItem> listFiles();
 
+
+
     @Override
-    public abstract int getSize();
+    public abstract String getExtension();
 
     @Override
     public abstract void open();
@@ -75,4 +77,6 @@ public abstract class FileSystemItemBase implements FileSystemItem {
     public abstract void write(byte[] buffer);
 
     public abstract void close();
+
+
 }
