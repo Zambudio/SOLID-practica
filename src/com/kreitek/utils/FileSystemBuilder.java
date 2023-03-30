@@ -1,7 +1,7 @@
 package com.kreitek.utils;
 
 import com.kreitek.files.Directory;
-import com.kreitek.files.File;
+import com.kreitek.files.FileReadWrite;
 import com.kreitek.files.FileSystemItem;
 
 public class FileSystemBuilder {
@@ -19,7 +19,7 @@ public class FileSystemBuilder {
     }
 
     public FileSystemBuilder addFile(String name, int size) {
-        FileSystemItem file = new File(currentDirectory, name);
+        FileSystemItem file = new FileReadWrite(currentDirectory, name);
         file.open();
         file.write(new byte[size]);
         file.close();
