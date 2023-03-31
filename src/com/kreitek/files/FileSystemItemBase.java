@@ -1,5 +1,7 @@
 package com.kreitek.files;
 
+import com.kreitek.interfaces.FileSystemItem;
+
 import java.util.List;
 
 public abstract class FileSystemItemBase implements FileSystemItem {
@@ -31,18 +33,6 @@ public abstract class FileSystemItemBase implements FileSystemItem {
     }
 
     @Override
-    public void setParent(FileSystemItem directory) {
-        if (directory != null && !(directory instanceof Directory)) {
-            throw new IllegalArgumentException("El padre solo puede ser un directorio");
-        }
-        if (this.parent != directory) {
-            if (this.parent != null) this.parent.removeFile(this);
-            this.parent = directory;
-            if (directory != null) directory.addFile(this);
-        }
-    }
-
-    @Override
     public String getFullPath() {
         String path = PATH_SEPARATOR;
         if (parent != null) {
@@ -59,7 +49,22 @@ public abstract class FileSystemItemBase implements FileSystemItem {
     @Override
     public abstract List<FileSystemItem> listFiles();
 
+    /*
+    Los siguientes metodos no deberian implementarse aquí, sino cada uno en
+    su clase correspondiente.
+     */
 
+    @Override
+    public void setParent(FileSystemItem directory) {
+        if (directory != null && !(directory instanceof Directory)) {
+            throw new IllegalArgumentException("El padre solo puede ser un directorio");
+        }
+        if (this.parent != directory) {
+            if (this.parent != null) this.parent.removeFile(this);
+            this.parent = directory;
+            if (directory != null) directory.addFile(this);
+        }
+    }
 
     @Override
     public abstract String getExtension();

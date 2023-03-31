@@ -1,4 +1,6 @@
-package com.kreitek.files;
+package com.kreitek.interfaces;
+
+import com.kreitek.interfaces.FileSystemItem;
 
 public interface DirectoryOperations {
 

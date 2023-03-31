@@ -1,5 +1,8 @@
 package com.kreitek.files;
 
+import com.kreitek.interfaces.FileSystemItem;
+import com.kreitek.interfaces.FilesOperations;
+
 import java.util.List;
 
 public  class FileReadWrite extends FileSystemItemBase implements FilesOperations {

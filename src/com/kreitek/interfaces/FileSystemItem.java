@@ -1,4 +1,4 @@
-package com.kreitek.files;
+package com.kreitek.interfaces;
 
 import java.util.List;
 

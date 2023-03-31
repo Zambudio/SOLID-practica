@@ -1,8 +1,9 @@
 package com.kreitek.files;
 
 import com.kreitek.files.error.InvalidFileFormatException;
+import com.kreitek.interfaces.ConverterFiles;
 
-public class FileConverter implements ConverterFiles{
+public class FileConverter implements ConverterFiles {
     @Override
     public FileReadWrite convertMp3ToWav() {
         FileReadWrite file = null;
